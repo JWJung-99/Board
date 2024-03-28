@@ -33,7 +33,7 @@ function Header() {
         <div className="w-1/2 order-1 flex justify-end items-center md:w-auto md:order-2">
           {user ? 
             <div className="flex items-center gap-2 shrink-0">
-              <img className="w-10 h-10 rounded-full" src={`https://market-lion.koyeb.app/api/files/${user.profile}`} />
+              <img className="w-10 h-10 rounded-full" src={`${import.meta.env.VITE_API_SERVER}/files/${user.profile}`} />
               <p className="text-sm whitespace-nowrap">{user.name}님 안녕하세요!</p>
               <Button size="sm" onClick={handleLogout}>로그아웃</Button>
             </div> : 

@@ -32,7 +32,7 @@ function BoardList() {
 
   const {isLoading, data, error, refetch} = useQuery({
     queryKey: ['posts'],
-    queryFn: () => axios.get('/posts', { params: {page: searchParams.get('page'), limit: 10, keyword: searchParams.get('keyword')} }), // Promise를 반환
+    queryFn: () => axios.get('/posts', { params: {page: searchParams.get('page'), limit: import.meta.env.VITE_POST_LIMIT, keyword: searchParams.get('keyword')} }), // Promise를 반환
     select: response => response.data,
     // staleTime: 1000 * 10,
     suspense: true

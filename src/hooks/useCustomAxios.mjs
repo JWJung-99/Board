@@ -3,8 +3,6 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 
-const API_SERVER = "https://market-lion.koyeb.app/api";
-
 function useCustomAxios() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -13,7 +11,7 @@ function useCustomAxios() {
   const user = useRecoilValue(userState);
   
   const instance = axios.create({
-    baseURL: API_SERVER,
+    baseURL: import.meta.env.VITE_API_SERVER,
     timeout: 1000 * 10,
     headers: {
       'Content-Type': 'application/json',
