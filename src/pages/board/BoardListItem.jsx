@@ -8,7 +8,8 @@ function BoardListItem({ item }) {
       <td className="p-2 text-center whitespace-nowrap">{item._id}</td>
       <td className="p-2 truncate indent-4 cursor-pointer" onClick={() => {navigate(`/posts/${item._id}`)}}>{item.title}</td>
       <td className="p-2 truncate indent-2">{item.user.name}</td>
-      <td className="p-2 text-center hidden sm:table-cell">{item.viewCount}</td>
+      <td className="p-2 text-center hidden sm:table-cell">{item.views || 0}</td>
+      <td className="p-2 text-center hidden sm:table-cell">{item.repliesCount || 0}</td>
       <td className="p-2 text-center whitespace-nowrap truncate hidden sm:table-cell">{item.updatedAt}</td>
     </tr>
   )
