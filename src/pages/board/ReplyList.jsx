@@ -56,7 +56,7 @@ function ReplyList() {
         pageStart={1}
         loadMore={fetchNextPage}
         hasMore={hasNext}
-        loader={<Spinner />}
+        loader={<Spinner key='0'/>}
       >
         {list || []}
       </InfiniteScroll>
